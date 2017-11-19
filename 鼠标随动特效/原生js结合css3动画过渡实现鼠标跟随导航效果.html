@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html{
+			height: 100%;
+		}
+		body{
+			width: 100%;
+			height:100%;
+			background: url(img/bg_body.jpg);
+			background-size: 100% 100%;
+			overflow: hidden;
+		}
+		.wrap{
+			position: relative;
+			width: 1156px;
+			height: 450px;
+			margin: 50px auto;
+		}
+		.wrap ul li{
+			position: relative;
+			z-index: 10;
+			width: 230px;
+			height: 150px;
+			float: left;
+			list-style: none;
+			border-right: 1px dotted #ccc;
+			border-bottom: 1px dotted #ccc;
+			background: url(img/clients.png) no-repeat;
+			-webkit-transition:1s;
+			-moz-transition:1s;
+			-ms-transition:1s;
+			-o-transition:1s;
+			transition: 1s;
+		}
+		.box{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 2;
+			width: 230px;
+			height: 150px;
+			background: rgba(0,0,0,.2);
+			-webkit-transition:1s;
+			-moz-transition:1s;
+			-ms-transition:1s;
+			-o-transition:1s;
+			transition: 1s;
+		}
+	</style>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li style="border-top: 1px dotted #ccc;border-left: 1px dotted #ccc;"></li>
+				<li style="border-top: 1px dotted #ccc;"></li>
+				<li style="border-top: 1px dotted #ccc;"></li>
+				<li style="border-top: 1px dotted #ccc;"></li>
+				<li style="border-top: 1px dotted #ccc;"></li>
+				<li style="border-left: 1px dotted #ccc;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li style="border-left: 1px dotted #ccc;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="box"></div>
+		</div>
+		
+		<script>
+			var oli =document.getElementsByTagName("li");
+			var box = document.getElementsByClassName("box")[0];
+			for(var i= 0;i<oli.length;i++){
+				oli[i].style.backgroundPositionX=-230*i+"px";
+			}
+			for(var i= 0;i<oli.length;i++){
+				oli[i].onmouseover = function(){
+					var _left = this.offsetLeft;
+					var _top = this.offsetTop;
+					box.style.left = _left+"px";
+					box.style.top = _top+"px";
+					this.style.backgroundPositionY="-150px";   //字向上滚动150px
+				}
+				oli[i].onmouseout = function(){
+					this.style.backgroundPositionY="0px"    //返回原来样子
+				}
+			}
+		</script>
+		
+		
+	</body>
+</html>
