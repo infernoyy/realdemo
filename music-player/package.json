@@ -1,0 +1,38 @@
+{
+  "name": "music-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon",
+    "client": "browser-sync start --server client --files \"client/**/*.html, client/**/*.js, client/**/*.css\" --no-notify"
+  },
+  "keywords": [
+    "music player",
+    "vue",
+    "vuejs",
+    "vue.js"
+  ],
+  "author": "iceStone <ice@micua.com> (http://blog.wedn.net/)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "formidable": "^1.1.1",
+    "glob": "^7.1.2",
+    "xtemplate": "^4.6.1",
+    "xtpl": "^3.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "nodemon": "^1.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zce/music-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zce/music-player/issues"
+  },
+  "homepage": "https://github.com/zce/music-player#readme"
+}
